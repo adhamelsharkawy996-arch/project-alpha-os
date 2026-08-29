@@ -1,4 +1,4 @@
-# Project Alpha OS v2 — Skill Policy
+# Project Alpha OS v3 — Skill Policy
 
 ## Purpose
 
@@ -82,7 +82,7 @@ Too many overlapping skills can:
 
 For substantial projects:
 
-Abel
+Cursor
 ↓
 identifies project type and requirements
 ↓
@@ -96,7 +96,7 @@ records selected skills in technical blueprint
 ↓
 Cursor uses those skills during implementation
 
-Abel may explicitly require a skill when Project Alpha policy or project requirements justify it.
+Cursor may explicitly require a skill when Project Alpha policy or project requirements justify it.
 
 Cursor may recommend additional relevant skills during planning.
 
@@ -699,11 +699,11 @@ If two skills recommend conflicting approaches:
 
 If the conflict has high architectural impact:
 
-return to Abel.
+stop, record the conflict, and ask Adham when the decision exceeds scope.
 
 If unusually difficult:
 
-Codex escalation may be considered.
+Cursor should reason through the evidence rather than following a conflicting skill blindly.
 
 ---
 
@@ -719,7 +719,7 @@ If a skill:
 
 do not blindly continue following it.
 
-Abel / Cursor should:
+Cursor should:
 
 1. verify current reality
 2. use Scout when external research is needed
@@ -822,8 +822,8 @@ Do not retain a skill solely because it is popular.
 
 The full curated skill stack should be stress-tested only after:
 
-- Project Alpha OS v2 is complete
-- Hermes / Abel memory is complete
+- Project Alpha OS v3 is complete
+- Cursor memory is complete
 - routing is operational
 - delegation is operational
 - Cursor planning routing is operational

@@ -1,14 +1,65 @@
-# Project Alpha OS v2 — Routing Policy
+# Project Alpha OS v3 — Routing Policy
 
 ## Purpose
 
-This file defines WHEN Project Alpha OS routes work to each specialist.
+This file defines WHEN Project Alpha OS routes work.
 
 AGENT_REGISTRY.md defines WHO each specialist is.
 
-DELEGATION_POLICY.md defines HOW work is handed to a specialist.
+DELEGATION_POLICY.md defines HOW work is handed off.
 
-Hermes / Abel owns the final routing decision.
+Cursor owns the final routing decision.
+
+---
+
+## Default Entry Point
+
+All work enters through Cursor in Slack (primarily `#all-alpha-command`).
+
+---
+
+## Routing Priority (in order)
+
+1. Explicit repository, environment, or branch stated in the message
+2. Channel default repository
+3. Recent activity in the conversation
+4. Named Environment defaults
+5. Global default (`project-alpha-os` or the Project Alpha Environment)
+
+---
+
+## Multi-Repository Support
+
+Prefer using named **Environments** that group:
+
+- project-alpha-os (or project-alpha-core) — the brain
+- Active project repositories
+- Shared internal tools if needed
+
+Example intent:
+
+`@Cursor env="Project Alpha" fix the issue in client-x`
+
+---
+
+## Cloud Agents & Parallel Work
+
+Cursor may launch Cloud Agents, background agents, or parallel agents for:
+
+- Large implementations
+- Independent subtasks
+- Research (via Scout if enabled)
+- Validation and testing
+
+Cursor remains responsible for the overall result and final completion state.
+
+---
+
+## Workspace Safety
+
+- Never assume the current directory is correct.
+- Always confirm against PROJECT_REGISTRY.md and routing rules.
+- If the workspace is wrong or ambiguous → stop and report BLOCKED or NEEDS REVIEW.
 
 ---
 
@@ -20,33 +71,28 @@ Do not invoke a specialist merely because the task category exists.
 
 A task category and an agent are different things.
 
-For example:
-- COMMERCIAL may remain a classification without requiring a Meter agent
-- ESCALATION may remain an execution state without requiring a Codex agent
-- lightweight reasoning does not require a Longcat role
-
 Preferred execution paths:
 
 Simple reasoning / operations
-→ Hermes / Abel directly
+→ Cursor directly
 
 Product requirements discussion
-→ Hermes / Abel directly
+→ Cursor directly
 
 Large software product planning
 → Cursor Planning Mode
 
 Research / discovery
-→ Scout
+→ Scout, when enabled
 
 Commercial intelligence
-→ Hermes / Abel (dynamically, using available tools)
+→ Cursor (dynamically, using available tools)
 
 Software implementation
 → Cursor
 
 Difficult technical reasoning
-→ Hermes / Abel (dynamically)
+→ Cursor (dynamically)
 
 ---
 
@@ -56,7 +102,7 @@ Every meaningful request should conceptually pass through:
 
 REQUEST
 ↓
-HERMES / ABEL UNDERSTANDS INTENT
+CURSOR UNDERSTANDS INTENT
 ↓
 CLASSIFY TASK
 ↓
@@ -64,13 +110,13 @@ LOAD RELEVANT CONTEXT
 ↓
 SELECT EXECUTION PATH
 ↓
-DELEGATE
+DELEGATE IF NEEDED
 ↓
 EXECUTE
 ↓
 VALIDATE
 ↓
-HERMES / ABEL REVIEWS
+CURSOR REVIEWS
 ↓
 REPORT
 ↓
@@ -82,9 +128,9 @@ Substantial work does.
 
 ---
 
-# 3. Hermes / Abel Direct Execution
+# 3. Cursor Direct Execution
 
-Use Hermes / Abel directly for:
+Use Cursor directly for:
 
 - general reasoning
 - conversations
@@ -103,6 +149,7 @@ Use Hermes / Abel directly for:
 - maintaining Project Alpha state
 - commercial intelligence (using available tools)
 - difficult technical reasoning (using available tools)
+- software implementation
 
 ---
 
@@ -120,7 +167,7 @@ When Adham says or clearly implies something such as:
 - "Let's architect this"
 - "Let's plan the system"
 
-Hermes / Abel should enter PRODUCT PLANNING FLOW.
+Cursor should enter PRODUCT PLANNING FLOW.
 
 Do not immediately begin implementation.
 
@@ -132,7 +179,7 @@ For substantial software products:
 
 ADHAM
 ↓
-HERMES / ABEL
+CURSOR
 ↓
 REQUIREMENTS DISCOVERY
 ↓
@@ -140,17 +187,15 @@ CURSOR PLANNING MODE
 ↓
 TECHNICAL BLUEPRINT
 ↓
-HERMES / ABEL REVIEW
-↓
 ADHAM APPROVAL WHEN NEEDED
 ↓
 CURSOR IMPLEMENTATION
 
 ---
 
-# 6. Hermes / Abel's Role During Product Planning
+# 6. Cursor's Role During Product Planning
 
-Before invoking Cursor Planning Mode, Hermes / Abel should clarify the product enough for meaningful technical planning.
+Before entering Planning Mode, Cursor should clarify the product enough for meaningful technical planning.
 
 Gather relevant information such as:
 
@@ -212,8 +257,6 @@ Cursor Planning Mode owns technical planning such as:
 - relevant Cursor skills
 - implementation order
 
-Hermes / Abel should not independently produce the final technical architecture for a serious project when Cursor Planning Mode is available.
-
 ---
 
 # 8. Small Project Exception
@@ -232,13 +275,13 @@ Examples:
 
 For these:
 
-HERMES / ABEL
-↓
 CURSOR
 ↓
-VALIDATION
+IMPLEMENT
 ↓
-HERMES / ABEL REVIEW
+VALIDATE
+↓
+REPORT
 
 ---
 
@@ -246,11 +289,11 @@ HERMES / ABEL REVIEW
 
 When planning substantial changes to an existing project:
 
-Hermes / Abel must identify the correct workspace first.
+Cursor must identify the correct workspace first.
 
 Then:
 
-HERMES / ABEL
+CURSOR
 ↓
 LOAD PROJECT STATE
 ↓
@@ -297,13 +340,13 @@ Route to Cursor for:
 
 Default software flow:
 
-HERMES / ABEL
-↓
 CURSOR
 ↓
-CURSOR SELF-VALIDATION
+IMPLEMENT
 ↓
-HERMES / ABEL INDEPENDENT REVIEW
+SELF-VALIDATION
+↓
+EVIDENCE REVIEW
 ↓
 REPORT
 
@@ -311,11 +354,11 @@ REPORT
 
 # 11. Cursor Workspace Rule
 
-Never invoke Cursor for project modification until the intended workspace is known.
+Never begin project modification until the intended workspace is known.
 
-Hermes / Abel must never guess a project path.
+Cursor must never guess a project path.
 
-For substantial work, Cursor should execute inside the verified project directory.
+For substantial work, execute inside the verified project directory.
 
 No unrelated project may be modified.
 
@@ -323,44 +366,11 @@ No unrelated project may be modified.
 
 # 12. Cursor Skill Routing
 
-Cursor has globally installed specialist skills at:
-
-~/.cursor/skills/
-
-Before substantial implementation or planning, Hermes / Abel and/or Cursor should determine which skills are relevant.
+Before substantial implementation or planning, determine which skills are relevant.
 
 Do not activate every skill indiscriminately.
 
 Select by task.
-
-Example premium Next.js website:
-
-Design:
-- taste-skill
-- ui-ux-pro-max
-
-Motion:
-- gsap-core
-- gsap-react
-- gsap-timeline
-- gsap-scrolltrigger
-- gsap-plugins
-- gsap-performance
-- animate
-- improve-animations
-- review-animations
-
-Engineering:
-- react-best-practices
-
-QA:
-- playwright-cli
-
-Accessibility:
-- accessibility
-
-SEO:
-- optimise-seo
 
 Skills improve specialist execution.
 
@@ -370,7 +380,7 @@ They do not replace project requirements or validation.
 
 # 13. Scout Routing
 
-Route to Scout when the task primarily requires external discovery or evidence.
+Route to Scout when the task primarily requires external discovery or evidence and Scout is enabled.
 
 Examples:
 
@@ -398,30 +408,19 @@ Scout should normally research before Cursor builds when implementation depends 
 
 When implementation depends on current or uncertain information:
 
-HERMES / ABEL
+CURSOR
 ↓
-SCOUT
+SCOUT (if enabled)
 ↓
 RESEARCH FINDINGS
 ↓
-HERMES / ABEL SYNTHESIZES
+CURSOR SYNTHESIZES
 ↓
 CURSOR PLANNING MODE IF SUBSTANTIAL
 ↓
 CURSOR IMPLEMENTS
 ↓
 VALIDATION
-
-Examples:
-
-- unfamiliar payment provider
-- new authentication provider
-- current API limits
-- current library capability
-- new framework feature
-- unknown hosting limitations
-- third-party integrations
-- external security products
 
 ---
 
@@ -439,36 +438,13 @@ Example:
 "Why does this project's GSAP ScrollTrigger implementation break on mobile?"
 → Cursor
 
-If Cursor requires current external documentation:
-
-Scout may research first or Cursor may inspect documentation when the task is tightly connected to implementation.
-
-Hermes / Abel decides based on efficiency.
+If Cursor requires current external documentation, Cursor may inspect documentation when the task is tightly connected to implementation.
 
 ---
 
 # 16. Commercial Intelligence
 
-Commercial intelligence is handled dynamically by Hermes / Abel using available tools.
-
-Route commercial questions to Hermes / Abel for:
-
-- advertising analysis
-- campaign strategy
-- sales intelligence
-- pricing strategy
-- competitor offer analysis
-- conversion analysis
-- funnel analysis
-- customer acquisition
-- positioning
-- lead economics
-- marketing performance
-- sales opportunities
-- commercial prioritization
-- revenue-related product thinking
-
-Hermes / Abel should reason from real available data.
+Commercial intelligence is handled dynamically by Cursor using available tools.
 
 Do not fabricate missing commercial numbers.
 
@@ -478,9 +454,9 @@ Unknown numbers must remain unknown unless they are explicitly estimated and cle
 
 # 17. Commercial-to-Product Flow
 
-When Hermes / Abel identifies a software/product opportunity from commercial analysis:
+When Cursor identifies a software/product opportunity from commercial analysis:
 
-HERMES / ABEL
+CURSOR
 ↓
 COMMERCIAL FINDING
 ↓
@@ -496,7 +472,7 @@ VALIDATION
 
 # 18. Difficult Technical Reasoning
 
-Difficult technical reasoning is handled dynamically by Hermes / Abel using available tools.
+Difficult technical reasoning is handled dynamically by Cursor using available tools.
 
 This includes:
 
@@ -508,7 +484,8 @@ This includes:
 - independent technical review
 - resolving technically ambiguous problems
 
-Hermes / Abel may:
+Cursor may:
+
 - reason through the problem directly
 - consult documentation
 - run experiments
@@ -518,4 +495,4 @@ Hermes / Abel may:
 
 # 19. Historical Note
 
-Previous versions of Project Alpha OS included Meter, Longcat, and Codex OAuth as dedicated agent roles. These were removed to keep the architecture intentionally small. Task classifications (COMMERCIAL, ESCALATION, LIGHTWEIGHT) remain as categories but no longer have dedicated agents. Hermes / Abel handles them dynamically using the available tools and agents.
+Previous versions of Project Alpha OS routed work through Hermes / Abel on Telegram, with Meter, Longcat, and Codex as dedicated agents. Those paths are deprecated. All work now enters through Cursor in Slack.

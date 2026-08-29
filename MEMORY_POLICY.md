@@ -1,4 +1,4 @@
-# Project Alpha OS v2 — Memory Policy
+# Project Alpha OS v3 — Memory Policy
 
 ## Purpose
 
@@ -22,7 +22,7 @@ Project files are implementation truth.
 
 OS files are operating truth.
 
-Memory should contain durable context that helps Abel operate better across sessions.
+Memory should contain durable context that helps Cursor operate better across sessions.
 
 Do not store information simply because it appeared in conversation.
 
@@ -32,11 +32,11 @@ Store it only if it is likely to matter again.
 
 # 2. Memory Ownership
 
-Abel / Hermes owns persistent memory management.
+Cursor owns persistent memory management.
 
 Other specialists may recommend something be remembered, but they do not directly redefine global memory policy.
 
-Cursor and Scout may produce information that later becomes memory only after Abel determines it is durable and useful.
+Scout may produce information that later becomes memory only after Cursor determines it is durable and useful.
 
 ---
 
@@ -66,7 +66,7 @@ Use GLOBAL MEMORY for information that is useful across many projects.
 
 Examples:
 
-- Adham prefers Telegram as the primary interface
+- Adham prefers Slack as the primary interface
 - Cursor is the primary builder
 - preferred working patterns
 - reusable Project Alpha standards
@@ -154,8 +154,7 @@ Defines what the system MUST do.
 
 Examples:
 
-- Cursor is the primary builder
-- Codex is escalation-only
+- Cursor is the primary orchestrator and builder
 - production deployment requires approval
 - project workspace must be verified
 
@@ -193,7 +192,7 @@ Memory is never authoritative enough to override current evidence.
 
 # 10. Memory Admission Test
 
-Before writing something to persistent memory, Abel should ask:
+Before writing something to persistent memory, Cursor should ask:
 
 ## A. Is it durable?
 
@@ -367,19 +366,11 @@ Research findings may become memory only when they represent durable reusable kn
 
 Current pricing, repository popularity, or changing product availability should normally be re-researched later.
 
-## Meter
-
-Campaign and sales observations normally belong in commercial/project records, not global memory.
-
 ## Cursor
 
 Implementation details normally belong in the project.
 
-## Codex
-
 Technical reasoning may become reusable memory only if it produces a durable cross-project lesson.
-
-## Longcat
 
 Summaries or interpretations are not automatically memory.
 
@@ -562,7 +553,7 @@ When Adham explicitly says:
 - don't forget this
 - make this permanent
 
-Abel should determine the correct persistent location.
+Cursor should determine the correct persistent location.
 
 Possible destinations:
 
@@ -675,7 +666,7 @@ Do not create empty categories merely for appearance.
 
 Routine memory updates do not require verbose reporting.
 
-For important changes, Abel may report:
+For important changes, Cursor may report:
 
 - what was remembered
 - where it was stored

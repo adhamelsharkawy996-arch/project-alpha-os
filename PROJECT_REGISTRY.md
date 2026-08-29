@@ -1,4 +1,4 @@
-# Project Alpha OS v2 — Project Registry
+# Project Alpha OS v3 — Project Registry
 
 ## Purpose
 
@@ -13,7 +13,7 @@ It exists to prevent:
 - mixing project-specific context
 - accidental cross-project changes
 
-Before substantial project work, Abel must resolve the requested project through this registry.
+Before substantial project work, Cursor must resolve the requested project through this registry.
 
 ---
 
@@ -243,7 +243,11 @@ ACTIVE
 
 Purpose:
 
-Project Alpha OS v2 configuration, routing, memory, registry, and operating policy.
+Project Alpha OS v3 configuration, routing, memory, registry, and operating policy.
+
+GitHub:
+
+github.com/adhamelsharkawy996-arch/project-alpha-os
 
 Production project:
 
@@ -445,7 +449,7 @@ Do not overload the registry with detailed architecture.
 
 # 15. Project-Specific Memory
 
-Do not store large amounts of project-specific detail in global Hermes memory.
+Do not store large amounts of project-specific detail in global OS memory.
 
 Project-specific facts should preferably live:
 
@@ -461,7 +465,7 @@ Global memory should contain only durable cross-project information.
 
 When Adham switches projects:
 
-Abel should:
+Cursor should:
 
 1. resolve the new project
 2. update Active Project Pointer if appropriate
@@ -483,7 +487,7 @@ Example:
 
 "the gelatin website"
 
-If multiple registered projects relate to gelatin, Abel must resolve the ambiguity before modification.
+If multiple registered projects relate to gelatin, Cursor must resolve the ambiguity before modification.
 
 Aliases should reduce this problem over time.
 
@@ -613,7 +617,7 @@ REGISTERED / VERIFIED
 
 Production/client projects:
 
-NOT YET VERIFIED UNDER OS v2
+NOT YET VERIFIED UNDER OS v3
 
 Active production project:
 

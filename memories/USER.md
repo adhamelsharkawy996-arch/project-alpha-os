@@ -32,6 +32,12 @@ For major architecture, research, planning, or comparison requests, detailed ana
 
 ## Communication Preferences
 
+Primary interface:
+
+Slack (`#all-alpha-command` and related channels)
+
+Telegram is no longer the primary interface.
+
 Primary technical communication language:
 
 English

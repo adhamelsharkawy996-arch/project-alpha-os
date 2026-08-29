@@ -1,4 +1,8 @@
-# Project Alpha OS v2 — Current State
+# Project Alpha OS v3 — Current State
+
+**Version**: v3  
+**Last Updated**: 2026-08-29  
+**Status**: Transition complete
 
 ## Purpose
 
@@ -21,39 +25,81 @@ Update this file whenever the real system state materially changes.
 
 ---
 
+## Current Primary Agent
+
+Cursor (Orchestrator + Builder)
+
+Cursor is the single live entry point. It owns routing, planning, implementation, self-validation, completion status, and final reporting.
+
+---
+
+## Interface
+
+Slack (`#all-alpha-command` and related channels)
+
+Canonical chain:
+
+Adham → Slack → Cursor → Project Alpha OS → Code / Tools / Deploy
+
+---
+
+## Source of Truth
+
+Private GitHub repositories:
+
+- `project-alpha-os` — operating system, routing, memory, skills catalog
+- `project-alpha-core` — companion core repo when present
+- project repos — implementation truth for each product
+
+Conversation provides current context.  
+OS files provide operating truth.  
+Project files provide implementation truth.  
+Verification provides completion truth.
+
+---
+
+## Live Components
+
+- OS files: Active
+- Skills catalog: Active
+- Memory systems: Active
+- Cursor Cloud Agents: Primary execution path
+
+---
+
+## Deprecated
+
+- Hermes / Abel orchestration path
+- Telegram as primary interface
+- Old agent roster (Meter, Longcat, Codex)
+
+These are historical. They must not be treated as live routing, intake, or authority.
+
+---
+
+## Next Focus
+
+Real multi-repo tasks executed entirely under Cursor orchestration with full OS compliance.
+
+---
+
 # 1. OS Version
 
 System:
 
-Project Alpha OS v2
+Project Alpha OS v3
 
 Status:
 
-BUILDING
+TRANSITION COMPLETE
 
 Current phase:
 
-Core OS construction
+Cursor-orchestrated multi-repo execution
 
 ---
 
-# 2. Primary Interface
-
-Primary user interface:
-
-Telegram
-
-User
-→ Telegram
-→ Hermes / Abel
-→ Project Alpha OS
-→ specialists
-
-Telegram remains the main operating surface.
-
----
-
-# 3. Hermes / Abel
+# 2. Cursor
 
 Status:
 
@@ -61,259 +107,72 @@ ACTIVE
 
 Role:
 
-Primary orchestrator and persistent operating layer.
+Primary orchestrator and software builder
 
-Current responsibilities:
+Execution path:
 
-- receive requests
-- understand intent
-- gather requirements
-- route tasks
-- coordinate specialists
-- maintain continuity
-- review results
-- maintain persistent state
+Cursor Cloud Agents (primary)
 
-Hermes is not the primary software builder.
+Interface:
 
----
+Slack
 
-# 4. Cursor
-
-Status:
-
-INSTALLED
-AUTHENTICATED
-CLI VERIFIED
-HERMES BRIDGE VERIFIED
-
-Binary:
-
-/home/adham/.local/bin/agent
-
-Authentication:
-
-Cursor account authenticated successfully.
-
-Verified harmless CLI response:
-
-CURSOR WORKING
-
-Verified file-write test:
-
-PASS
-
-Verified Hermes → Cursor invocation:
-
-PASS
-
-Verified Telegram → Hermes → Cursor → Hermes → Telegram flow:
-
-PASS
-
-Current role:
-
-PRIMARY SOFTWARE BUILDER
-
-Planning role:
-
-PRIMARY TECHNICAL PLANNER for substantial software products through Cursor Planning Mode.
-
----
-
-# 5. Cursor Skills
-
-Global skill root:
-
-/home/adham/.cursor/skills/
-
-Status:
-
-INSTALLED
-
-Verified installed skill count:
-
-20
-
-Current curated skill stack includes:
-
-## GSAP
-
-- gsap-core
-- gsap-frameworks
-- gsap-performance
-- gsap-plugins
-- gsap-react
-- gsap-scrolltrigger
-- gsap-timeline
-- gsap-utils
-
-## Motion / Product Interaction
-
-- animate
-- apple-design
-- find-animation-opportunities
-- improve-animations
-- prototype
-- review-animations
-
-## Design
-
-- taste-skill
-- ui-ux-pro-max
-
-## Engineering
-
-- react-best-practices
-
-## QA
-
-- playwright-cli
-
-## Accessibility
-
-- accessibility
-
-## SEO
-
-- optimise-seo
-
-Skill installation verification:
-
-PASS
-
-Full skill stress test:
-
-PENDING
-
-Stress testing should happen after OS, memory, and routing are complete.
-
----
-
-# 6. Scout
-
-Status:
-
-PLANNED / ROLE DEFINED
-
-Primary purpose:
-
-Research and discovery.
-
-Expected use:
-
-- GitHub research
-- current tooling research
-- documentation research
-- technology comparison
-- competitor research
-- external evidence gathering
-
-Operational routing will be finalized through Project Alpha OS.
-
----
-
-# 7. Removed Roles
-
-The following are no longer part of the Project Alpha OS agent architecture:
-
-- Meter
-- Longcat
-- Codex OAuth
-
-Commercial, reasoning, planning, research, and escalation decisions are handled dynamically by Hermes / Abel using the available tools and agents.
-
----
-
-# 10. Verified Execution Architecture
-Current verified execution path:
-
-Telegram
-↓
-Hermes / Abel
-↓
-Cursor CLI
-↓
-execution/result
-↓
-Hermes / Abel
-↓
-Telegram
-
-Status:
-
-WORKING
-
-Future specialist routing:
-
-Telegram
-↓
-Hermes / Abel
-↓
-Project Alpha OS
-├── Longcat
-├── Scout
-├── Meter
-├── Cursor
-└── Codex OAuth / gpt-5.6-sol
-
----
-
-# 11. Product Planning Architecture
-
-Current intended planning flow:
+Reports to:
 
 Adham
-↓
-Abel / Longcat
-↓
-requirements discovery
-↓
-Cursor Planning Mode
-↓
-technical architecture
-↓
-technical milestones
-↓
-Abel review
-↓
-Adham approval where needed
-↓
-Cursor implementation
+
+Authority:
+
+Full within OS hard limits
+
+Hard limits:
+
+- no production deploy without Adham's explicit approval
+- no secrets in memory, reports, or git
+- no OS architecture changes without explicit instruction
+- never guess a workspace
+
+---
+
+# 3. Scout
 
 Status:
 
-POLICY DEFINED
+DEFINED / OPTIONAL
 
-Full routing/delegation implementation:
+Role:
 
-IN PROGRESS
+Deep research specialist
+
+Called by:
+
+Cursor only
+
+Does:
+
+Research, synthesis, source gathering
+
+Does not:
+
+Write production code, own routing, or make architecture decisions
+
+Operational routing:
+
+Available when enabled. Not required for every task.
 
 ---
 
-# 12. Project Safety State
-
-Existing project directories must remain untouched unless explicitly selected for work.
-
-No project should be modified during OS construction or system testing unless the test explicitly uses a dedicated test workspace.
-
-Current harmless test workspace:
-
-~/cursor-test
-
-Production projects:
-
-NOT TO BE MODIFIED during OS setup unless Adham explicitly selects one.
-
----
-
-# 13. OS Files
+# 4. OS Files
 
 Current OS root:
 
-~/project-alpha-os/
+`project-alpha-os` (this repository)
 
-Current files:
+Cloud workspace for this session:
+
+`/workspace`
+
+Canonical files:
 
 - BOOTSTRAP.md
 - OPERATING_SYSTEM.md
@@ -322,82 +181,231 @@ Current files:
 - CURRENT_STATE.md
 - PROJECT_REGISTRY.md
 - MEMORY_POLICY.md
-
-Directory:
-
-- memories/
-
-Additional planned OS files:
-
 - DELEGATION_POLICY.md
 - SKILL_POLICY.md
 
+Directories:
+
+- memories/
+- skills/
+- agents/
+- knowledge/
+
 ---
 
-# 14. Completed OS Work
+# 5. Skills Catalog
+
+Status:
+
+ACTIVE
+
+Catalog location:
+
+`skills/` in this repository, plus Cursor global / plugin skills when present
+
+Repo-owned skill currently present:
+
+- deep-research (Scout)
+
+Skill-first rule remains in force:
+
+use the smallest capable skill set that materially improves the task.
+
+Full curated skill stress test:
+
+PENDING — should happen against real multi-repo work, not file discovery alone.
+
+---
+
+# 6. Memory Systems
+
+Status:
+
+ACTIVE
+
+Locations:
+
+- memories/USER.md
+- memories/MEMORY.md
+- MEMORY_POLICY.md
+
+Memory is for durable continuity.
+
+It is not conversation history and not a substitute for OS policy.
+
+---
+
+# 7. Project Registry
+
+Status:
+
+ACTIVE / PARTIALLY POPULATED
+
+Registered:
+
+- project-alpha-os — VERIFIED
+- cursor-test — previously registered as a local safe test workspace
+
+Production / client projects:
+
+NOT YET VERIFIED under OS v3
+
+Active production project:
+
+NONE
+
+Do not modify a client or production workspace until it is resolved in PROJECT_REGISTRY.md.
+
+---
+
+# 8. Multi-Repo / Environments
+
+Preferred model:
+
+Named Cursor Environments that group:
+
+- project-alpha-os (or project-alpha-core) — the brain
+- active project repositories
+- shared internal tools if needed
+
+Example intent:
+
+`@Cursor env="Project Alpha" fix the issue in client-x`
+
+Current named Environment status:
+
+NOT YET CONFIRMED as a saved `Project Alpha` Environment from this session.
+
+Until a named Environment is saved, routing falls back to:
+
+1. explicit repository / environment / branch in the message
+2. channel default repository
+3. recent conversation activity
+4. named Environment defaults
+5. global default (`project-alpha-os` or the Project Alpha Environment)
+
+---
+
+# 9. Verified Execution Architecture
+
+Current live path:
+
+Adham
+↓
+Slack
+↓
+Cursor (Cloud Agent)
+↓
+Project Alpha OS
+↓
+code / tools / optional Scout / parallel agents
+↓
+evidence
+↓
+completion state
+↓
+Slack report
+
+Status:
+
+LIVE
+
+Cursor remains responsible for the overall result even when Cloud Agents, background agents, or Scout run in parallel.
+
+---
+
+# 10. Product Planning Architecture
+
+Current intended planning flow:
+
+Adham
+↓
+Cursor (Slack)
+↓
+requirements discovery
+↓
+technical plan when the work is substantial
+↓
+Adham approval where needed
+↓
+Cursor implementation (milestones)
+↓
+evidence
+↓
+completion state
+
+Status:
+
+POLICY DEFINED
+
+---
+
+# 11. Project Safety State
+
+Existing project directories must remain untouched unless explicitly selected for work.
+
+Never assume the current directory is correct.
+
+Always confirm against PROJECT_REGISTRY.md and ROUTING.md.
+
+If the workspace is wrong or ambiguous:
+
+stop and report BLOCKED or NEEDS REVIEW.
+
+---
+
+# 12. Completed Transition Work
 
 Completed:
 
-- Project Alpha OS directory created
-- BOOTSTRAP.md populated
-- OPERATING_SYSTEM.md populated
-- AGENT_REGISTRY.md populated
-- ROUTING.md populated
-- Cursor CLI installed
-- Cursor authenticated
-- Cursor direct execution verified
-- Cursor file modification verified in safe test workspace
-- Hermes → Cursor bridge verified
-- Telegram round-trip verified
-- 20 global Cursor skills installed and verified
+- Cursor established as primary orchestrator and builder
+- Slack established as the primary interface
+- GitHub established as the source of truth
+- Hermes / Abel removed from the live orchestration path
+- Telegram removed as the primary interface
+- Meter, Longcat, and Codex removed from the live roster
+- OS files, skills catalog, and memory systems marked live
+- Cursor Cloud Agents marked as the primary execution path
+- Core OS policy files realigned to v3 (Cursor / Slack)
 
 ---
 
-# 15. Pending Work
+# 13. Pending Work
 
 Current priority order:
 
-1. finish Project Alpha OS v2 files
-2. build Hermes / Abel persistent memory
-3. finalize Cursor primary-builder behavior
-4. finalize Scout / Meter / Longcat / Cursor / Codex routing
-5. build delegation policy
-6. build skill policy
-7. verify persistent project registry
-8. full-system stress test
+1. execute real multi-repo tasks entirely under Cursor orchestration
+2. verify and register production / client workspaces
+3. confirm or create the named Project Alpha Environment
+4. stress-test skill selection and evidence-based completion on real work
+5. keep Scout optional and Cursor-called only
 
 ---
 
-# 16. Not Yet Verified
+# 14. Not Yet Verified
 
 The following are NOT yet considered fully verified:
 
-- automatic skill selection
-- Cursor Planning Mode routing from Hermes
-- production-grade delegation briefs
-- Scout routing
-- Meter routing
-- automatic Codex escalation
-- Codex model-lock enforcement
-- persistent memory retrieval after clean context loss
-- project registry resolution
-- full multi-agent workflow
-- end-to-end large project planning
-- end-to-end large project implementation
+- named `Project Alpha` Environment saved and reusable
+- production / client workspace registry
+- automatic skill selection under real load
+- full multi-repo Cloud Agent workflows
+- end-to-end large project planning and implementation under v3
+- Scout as an operational parallel specialist
 
 Do not claim these are working until tested.
 
 ---
 
-# 17. Current Blockers
+# 15. Current Blockers
 
 No critical blocker currently known.
 
-OS construction is in progress.
+The v2 Hermes / Telegram path is deprecated and must not be used as a live dependency.
 
 ---
 
-# 18. State Update Rule
+# 16. State Update Rule
 
 When material system state changes:
 
@@ -406,7 +414,7 @@ UPDATE THIS FILE.
 Examples:
 
 - specialist becomes operational
-- authentication changes
+- interface or source of truth changes
 - integration is verified
 - new global capability is installed
 - a blocker appears
@@ -420,36 +428,32 @@ Verified current reality overrides this file.
 
 ---
 
-# 19. Current System Verdict
+# 17. Current System Verdict
 
-Project Alpha OS v2 foundation:
+Project Alpha OS v3:
 
-IN PROGRESS
+TRANSITION COMPLETE
 
-Cursor primary builder:
+Primary agent:
 
-OPERATIONAL
+CURSOR — ORCHESTRATOR + BUILDER
 
-Telegram → Hermes → Cursor bridge:
+Primary interface:
 
-OPERATIONAL
+SLACK
 
-Global Cursor skills:
+Source of truth:
 
-INSTALLED
+PRIVATE GITHUB REPOSITORIES
 
-Persistent OS:
+Execution path:
 
-UNDER CONSTRUCTION
+CURSOR CLOUD AGENTS — LIVE
 
-Persistent memory:
+Deprecated path:
 
-NOT YET BUILT
+HERMES / ABEL / TELEGRAM — DO NOT USE
 
-Specialist routing:
+Next focus:
 
-POLICY DEFINED / NOT FULLY STRESS-TESTED
-
-Full system:
-
-NOT YET PRODUCTION-VERIFIED
+REAL MULTI-REPO TASKS UNDER CURSOR, WITH FULL OS COMPLIANCE
