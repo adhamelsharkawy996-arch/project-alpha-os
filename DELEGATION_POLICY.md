@@ -1,8 +1,8 @@
-# Project Alpha OS v2 — Delegation Policy
+# Project Alpha OS v3 — Delegation Policy
 
 ## Purpose
 
-This file defines HOW Abel delegates work to specialists.
+This file defines HOW Cursor delegates work to specialists or parallel agents.
 
 ROUTING.md decides:
 
@@ -12,7 +12,7 @@ DELEGATION_POLICY.md decides:
 
 HOW the task must be packaged, executed, validated, escalated, and returned.
 
-A specialist should never receive a vague substantial task when Abel can provide a structured execution brief.
+A specialist should never receive a vague substantial task when Cursor can provide a structured execution brief.
 
 ---
 
@@ -54,7 +54,7 @@ Every delegation template in this document maps to a YC-funded category.
 
 # 2. Delegation Ownership
 
-Abel owns system-level delegation.
+Cursor owns system-level delegation.
 
 Specialists may perform internal reasoning or tool use required for their task.
 
@@ -64,15 +64,15 @@ Preferred flow:
 
 Adham
 ↓
-Abel
+Cursor
 ↓
-Specialist
+Specialist or Cloud Agent
 ↓
-Abel
+Cursor
 ↓
 Next specialist if required
 
-Abel remains the coordination point.
+Cursor remains the coordination point.
 
 ---
 
@@ -94,7 +94,7 @@ Examples:
 
 Usually:
 
-Hermes / Abel
+Cursor
 
 Minimal brief required.
 
@@ -124,7 +124,7 @@ Marketing / sales / advertising / commercial intelligence.
 
 Usually:
 
-Hermes / Abel (dynamically)
+Cursor (dynamically)
 
 Requires:
 
@@ -174,7 +174,7 @@ Difficult technical reasoning.
 
 Usually:
 
-Hermes / Abel (dynamically)
+Cursor (dynamically)
 
 Requires:
 
@@ -185,13 +185,13 @@ Requires:
 - relevant architecture
 - expected reasoning output
 
-Hermes / Abel handles this directly using available tools.
+Cursor handles this directly using available tools.
 
 ---
 
 # 4. Delegation Readiness
 
-Before substantial delegation, Abel must determine whether the task is ready.
+Before substantial delegation, Cursor must determine whether the task is ready.
 
 Use these states:
 
@@ -224,7 +224,7 @@ Do not delegate a BLOCKED task merely to make progress appear active.
 
 # 5. Required Software Delegation Contract
 
-For substantial Cursor work, Abel should provide:
+For substantial implementation work, Cursor should provide:
 
 ## PROJECT
 
@@ -272,7 +272,7 @@ Commands, browser checks, tests, or other verification required.
 
 ## STOP CONDITIONS
 
-When Cursor must stop and return to Abel.
+When a specialist or Cloud Agent must stop and return to Cursor.
 
 ## REPORT FORMAT
 
@@ -408,7 +408,7 @@ After Cursor Planning Mode:
 
 Cursor Plan
 ↓
-Abel reviews
+Cursor reviews
 ↓
 Resolve important unanswered questions
 ↓
@@ -489,7 +489,7 @@ This reduces context drift and false completion.
 
 # 11. Skill Delegation
 
-Abel should not manually paste the contents of every skill into Cursor prompts.
+Cursor should not manually paste the contents of every skill into prompts.
 
 Instead:
 
@@ -568,7 +568,7 @@ Do not modify:
 
 unless the task explicitly requires it.
 
-If work outside the project becomes necessary, return control to Abel first when impact is significant.
+If work outside the project becomes necessary, stop and report first when impact is significant.
 
 ---
 
@@ -758,11 +758,11 @@ Prefer evidence:
 
 ---
 
-# 21. Abel Independent Review
+# 21. Independent Evidence Review
 
-Cursor self-validation is necessary but not always sufficient.
+Self-validation is necessary but not always sufficient.
 
-For substantial work, Abel should independently review important evidence.
+For substantial work, Cursor should independently review important evidence rather than accepting a completion narrative.
 
 This may include:
 
@@ -773,7 +773,7 @@ This may include:
 - comparing against acceptance criteria
 - checking project state
 
-Abel should not simply repeat Cursor's completion claim.
+Do not treat a generated summary as proof.
 
 ---
 
@@ -823,7 +823,7 @@ A specialist should stop instead of guessing when:
 - repeated attempts fail
 - external service prevents progress
 
-Return the blocker to Abel.
+Return the blocker to Cursor / Adham.
 
 ---
 
@@ -843,7 +843,7 @@ STOP
 ↓
 RETURN EVIDENCE
 ↓
-ABEL DECIDES ESCALATION
+CURSOR DECIDES ESCALATION
 
 More retries are not automatically better reasoning.
 

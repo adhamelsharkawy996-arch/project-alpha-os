@@ -410,11 +410,11 @@ Evidence matters more than confidence language.
 
 ---
 
-# 20. Abel Visual Review Principle
+# 20. Visual Review Principle
 
-If Cursor reports completion but Abel believes the actual visual result is mediocre, Abel should not silently approve it.
+If the actual visual result is mediocre, Cursor must not silently approve it.
 
-Abel should tell Adham:
+Cursor should tell Adham:
 
 - what appears weak
 - why it appears weak

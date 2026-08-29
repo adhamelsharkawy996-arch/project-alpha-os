@@ -333,15 +333,7 @@ Deep research does NOT mean infinite research.
 
 If research uncovers a technical question requiring implementation/codebase reasoning:
 
-return it to Abel.
-
-Abel may route it to:
-
-Cursor
-
-or, for exceptional technical reasoning:
-
-Codex OAuth / gpt-5.6-sol
+return it to Cursor.
 
 Scout does not become the builder.
 
